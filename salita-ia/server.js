@@ -49,5 +49,5 @@ http.createServer(async (req, res) => {
   }
 }).listen(PORT, () => {
   console.log(`\n  💙 Salita IA lista en http://localhost:${PORT}`);
-  if (!process.env.GEMINI_API_KEY && !process.env.ANTHROPIC_API_KEY) console.log('  ⚠️  Falta configurar GEMINI_API_KEY o ANTHROPIC_API_KEY\n');
+  if (!process.env.SALITA_API_KEY && !process.env.GEMINI_API_KEY && !process.env.ANTHROPIC_API_KEY) console.log('  ⚠️  Falta configurar SALITA_API_KEY o ANTHROPIC_API_KEY\n');
 });

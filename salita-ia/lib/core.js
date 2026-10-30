@@ -6,8 +6,10 @@ import { buildPdf, buildDocx, buildPptx, buildXlsx } from '../docs.js';
 export const PROVIDER = process.env.SALITA_PROVIDER || 'gemini';
 export const MODEL = process.env.SALITA_MODEL || (PROVIDER === 'gemini' ? 'gemini-2.5-flash' : 'claude-sonnet-5-5');
 
+const geminiApiKey = () => process.env.SALITA_API_KEY || process.env.GEMINI_API_KEY;
+
 export function hasApiKey() {
-  return PROVIDER === 'gemini' ? !!process.env.GEMINI_API_KEY : PROVIDER === 'anthropic' && !!process.env.ANTHROPIC_API_KEY;
+  return PROVIDER === 'gemini' ? !!geminiApiKey() : PROVIDER === 'anthropic' && !!process.env.ANTHROPIC_API_KEY;
 }
 
 const SYSTEM = `Eres Salita IA, un asistente de inteligencia artificial simpático, cálido y muy inteligente. Hablas en el idioma del usuario (por defecto español rioplatense, cercano y alegre, con algún emoji de vez en cuando, sin exagerar).
@@ -190,7 +192,7 @@ async function callGemini(body, toolNames) {
     try {
       const response = await fetch(url, {
         method: 'POST',
-        headers: { 'content-type': 'application/json', 'x-goog-api-key': process.env.GEMINI_API_KEY },
+        headers: { 'content-type': 'application/json', 'x-goog-api-key': geminiApiKey() },
         body: JSON.stringify(payload),
         signal: AbortSignal.timeout(120000)
       });
@@ -198,7 +200,7 @@ async function callGemini(body, toolNames) {
       if (!response.ok) {
         const message = data?.error?.message || `Error de Gemini (${response.status})`;
         if ([429, 500, 502, 503].includes(response.status) && attempt < 2) { lastErr = new Error(message); await sleep(1500 * (attempt + 1)); continue; }
-        if (response.status === 401 || response.status === 403) throw new Error('La clave de Gemini no es válida. Revisá GEMINI_API_KEY.');
+        if (response.status === 401 || response.status === 403) throw new Error('La clave de Gemini no es válida. Revisá SALITA_API_KEY.');
         throw new Error(message);
       }
       const candidate = data.candidates?.[0];

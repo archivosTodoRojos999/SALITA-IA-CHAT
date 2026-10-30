@@ -4,7 +4,7 @@ export default async function handler(req, res) {
   try {
     if (req.method !== 'POST') return res.status(405).json({ error: 'Método no permitido' });
     if (!hasApiKey()) {
-      const keyName = PROVIDER === 'gemini' ? 'GEMINI_API_KEY' : 'ANTHROPIC_API_KEY';
+      const keyName = PROVIDER === 'gemini' ? 'SALITA_API_KEY' : 'ANTHROPIC_API_KEY';
       return res.status(500).json({ error: `Falta configurar ${keyName}. En Vercel: Settings → Environment Variables.` });
     }
     const body = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;

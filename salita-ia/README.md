@@ -7,7 +7,7 @@ Se instala en el celular como una app (PWA).
 1. Creá una cuenta gratis en https://github.com y subí esta carpeta como repositorio nuevo.
 2. Entrá a https://vercel.com con tu cuenta de GitHub → "Add New… → Project" → elegí el repositorio → Deploy.
 3. En el proyecto de Vercel: Settings → Environment Variables → agregá
-   `GEMINI_API_KEY` = tu clave de Google AI Studio. Agregá también `SALITA_PROVIDER` = `gemini` y, opcionalmente, `SALITA_MODEL` = `gemini-2.5-flash`; después Deployments → "Redeploy".
+   `SALITA_API_KEY` = tu clave de Google AI Studio. Agregá también `SALITA_PROVIDER` = `gemini` y, opcionalmente, `SALITA_MODEL` = `gemini-2.5-flash`; después Deployments → "Redeploy".
 4. Abrí el link que te da Vercel (por ejemplo salita-ia.vercel.app).
 
 No pongas la clave dentro del código ni la subas a GitHub. Configurala como variable de entorno local o como secreto en Vercel.
@@ -23,7 +23,7 @@ Si Vercel se queja de `maxDuration`, bajá 300 a 60 en `vercel.json`.
 ## Probar en tu compu
 1. Node.js 18+ → `npm install`
 2. `npm test` crea PDF/Word/PowerPoint/Excel de ejemplo en `out/` (no necesita clave).
-3. `GEMINI_API_KEY=tu_clave npm start` → http://localhost:3000 (o usá `ANTHROPIC_API_KEY=tu_clave npm start` para Anthropic).
+3. `SALITA_API_KEY=tu_clave npm start` → http://localhost:3000 (o usá `ANTHROPIC_API_KEY=tu_clave npm start` para Anthropic).
 
 ## Tu logo original
 Poné tu imagen como `public/logo.png` (la app la usa en lugar de `logo.svg`).
