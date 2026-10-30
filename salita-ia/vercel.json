@@ -1,0 +1,20 @@
+{
+  "functions": {
+    "api/chat.js": { "maxDuration": 300, "memory": 1024 },
+    "api/extract.js": { "maxDuration": 60, "memory": 1024 },
+    "api/status.js": { "maxDuration": 10 }
+  },
+  "headers": [
+    {
+      "source": "/sw.js",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache" },
+        { "key": "Service-Worker-Allowed", "value": "/" }
+      ]
+    },
+    {
+      "source": "/manifest.webmanifest",
+      "headers": [{ "key": "Content-Type", "value": "application/manifest+json" }]
+    }
+  ]
+}

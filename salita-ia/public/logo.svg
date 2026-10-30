@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 150">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1F5C"/>
+      <stop offset="1" stop-color="#0A4C9A"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#0A7FC4"/>
+      <stop offset="1" stop-color="#06E0EE"/>
+    </linearGradient>
+  </defs>
+  <!-- globo grande azul oscuro -->
+  <path d="M36 8h56a26 26 0 0 1 26 26v34a26 26 0 0 1-26 26H58l-18 20V94A26 26 0 0 1 10 68V34A26 26 0 0 1 36 8z" fill="url(#g1)"/>
+  <!-- globo celeste -->
+  <path d="M82 40h52a26 26 0 0 1 26 26v26a26 26 0 0 1-26 26h-14l-16 18v-18a26 26 0 0 1-22-26V66a26 26 0 0 1 0-26z" fill="url(#g2)" opacity="0.93"/>
+  <!-- tres puntitos -->
+  <circle cx="36" cy="50" r="6" fill="#fff"/>
+  <circle cx="56" cy="50" r="6" fill="#fff"/>
+  <circle cx="76" cy="50" r="6" fill="#fff"/>
+  <!-- red neuronal -->
+  <g stroke="#fff" stroke-width="1.6" fill="none" opacity="0.95">
+    <line x1="112" y1="48" x2="112" y2="100"/>
+    <line x1="112" y1="60" x2="128" y2="68"/>
+    <line x1="128" y1="68" x2="142" y2="80"/>
+    <line x1="128" y1="92" x2="142" y2="80"/>
+    <line x1="112" y1="80" x2="142" y2="80"/>
+    <line x1="96" y1="80" x2="112" y2="80"/>
+    <line x1="112" y1="96" x2="128" y2="92"/>
+    <line x1="128" y1="68" x2="136" y2="58"/>
+    <line x1="128" y1="92" x2="136" y2="102"/>
+    <circle cx="112" cy="48" r="5"/>
+    <circle cx="96" cy="80" r="5"/>
+    <circle cx="112" cy="100" r="5"/>
+    <circle cx="136" cy="58" r="3"/>
+    <circle cx="136" cy="102" r="3"/>
+  </g>
+  <g fill="#fff">
+    <circle cx="128" cy="68" r="5"/>
+    <circle cx="128" cy="92" r="5"/>
+    <circle cx="142" cy="80" r="5"/>
+  </g>
+</svg>

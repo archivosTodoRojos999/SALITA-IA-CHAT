@@ -1,0 +1,19 @@
+{
+  "name": "salita-ia",
+  "version": "1.0.0",
+  "description": "Salita IA - asistente con IA que analiza imágenes y archivos y crea PDF, Word, PowerPoint, Excel y apps",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test-docs.js"
+  },
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "docx": "^9.0.0",
+    "exceljs": "^4.4.0",
+    "mammoth": "^1.8.0",
+    "pdfkit": "^0.15.0",
+    "pptxgenjs": "^3.12.0"
+  }
+}
