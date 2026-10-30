@@ -3,7 +3,7 @@ import mammoth from 'mammoth';
 import ExcelJS from 'exceljs';
 import { buildPdf, buildDocx, buildPptx, buildXlsx } from '../docs.js';
 
-export const PROVIDER = process.env.SALITA_PROVIDER || (process.env.GEMINI_API_KEY ? 'gemini' : 'anthropic');
+export const PROVIDER = process.env.SALITA_PROVIDER || 'gemini';
 export const MODEL = process.env.SALITA_MODEL || (PROVIDER === 'gemini' ? 'gemini-2.5-flash' : 'claude-sonnet-5-5');
 
 export function hasApiKey() {
